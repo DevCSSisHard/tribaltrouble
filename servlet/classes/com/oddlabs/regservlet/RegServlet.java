@@ -1,10 +1,10 @@
 package com.oddlabs.regservlet;
 
 import com.oddlabs.registration.RegistrationKey;
-import com.oddlabs.registration.RegistrationRequest;
+//import com.oddlabs.registration.RegistrationRequest;
 import com.oddlabs.registration.RegClientInterface;
 import com.oddlabs.registration.RegServiceInterface;
-import com.oddlabs.registration.RegistrationInfo;
+//import com.oddlabs.registration.RegistrationInfo;
 import com.oddlabs.event.Deterministic;
 import com.oddlabs.event.NotDeterministic;
 import com.oddlabs.util.KeyManager;
@@ -132,12 +132,12 @@ log("Oddlabs: got key request: remote host = " + req.getRemoteHost() + " | key_s
 		String key_str = createKey(request_key_str, current_affiliate_id);
 		long key = RegistrationKey.decode(key_str);
 		try {
-			SignedObject signed_registration = register(new RegistrationRequest(key, affiliate_id, version, timelimit, maxtime, forcequit, maxgames));
+			//SignedObject signed_registration = register(new RegistrationRequest(key, affiliate_id, version, timelimit, maxtime, forcequit, maxgames));
 			res.setContentType("application/octet-stream");
 
 			ServletOutputStream out = res.getOutputStream();
 			ObjectOutputStream obj_out = new ObjectOutputStream(out);
-			obj_out.writeObject(signed_registration);
+			//obj_out.writeObject(signed_registration);
 			obj_out.close();
 			log("Oddlabs: Registered key: " + key_str);
 		} catch (Exception e) {
@@ -165,12 +165,14 @@ log("Oddlabs: got key request: remote host = " + req.getRemoteHost() + " | key_s
 			throw new ServletException(e);
 		}
 	}
-
-	private SignedObject register(RegistrationRequest reg_request) throws SQLException, ServletException {
+/*
+private SignedObject register(RegistrationRequest reg_request) throws SQLException, ServletException {
 		long reg_key = reg_request.getKey();
 		String affiliate_id = reg_request.getAffiliate();
 		String encoded_key = RegistrationKey.encode(reg_key);
 		RegistrationInfo reg_info = DBInterface.registerKey(getDataSource(), reg_request);
 		return sign(reg_info);
 	}
+ */
+
 }
