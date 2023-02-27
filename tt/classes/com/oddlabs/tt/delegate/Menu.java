@@ -93,6 +93,23 @@ public abstract strictfp class Menu extends CameraDelegate {
 		exit.addMouseClickListener(new ExitListener());
 	}
 
+	/*
+	CSSishard / Runda change start - custom buttons testing
+	 */
+	protected final void addTestingCustomButton() {
+		addTestButton(() -> new CustomButtonClass(getGUIRoot()));
+	}
+
+	protected final void addTestButton(FormFactory factory) {
+		MenuButton testerButton = new MenuButton("test button", COLOR_NORMAL, COLOR_ACTIVE);
+		//using options Listener because... why not? i guess?
+		testerButton.addMouseClickListener(new OptionsListener(factory));
+		addChild(testerButton);
+	}
+	/*
+	End changes
+	 */
+
 	protected abstract void addButtons();
 
 	public final void reload() {

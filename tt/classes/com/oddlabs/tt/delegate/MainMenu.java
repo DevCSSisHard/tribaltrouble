@@ -50,7 +50,14 @@ public final strictfp class MainMenu extends Menu {
 		addGameTypeButtons();
 
 		addDefaultOptionsButton();
+		/*
+		CSSishard / Runda change start - custom button stuff
+		 */
+		addTestingCustomButton();
 
+		/*
+		End changes
+		 */
 		addExitButton();
 
 		if (Network.getMatchmakingClient().isConnected()) {
