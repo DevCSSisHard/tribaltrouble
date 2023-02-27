@@ -13,6 +13,12 @@ About this fork
 
 I have been working to restore this enjoyable game to working order with modern Java. This has included updating to more recent LWJGL, JInput and OpenAL, removing the need for registration, removing demo mode, removing updater as well as many Java modernizations and cleanups. The ultimate goal is to produce a jar that can be run simply with `java -jar tt.jar` on MacOS X, Linux and Windows.
 
+
+CSSishard Branch
+---------------
+Working off the Bondolo branch, I may pursue the above goals, but my overall goal is simply learning how things work, what makes them work the way they do as well as optimal methods of doing things in programming & java.
+Essentially, just a play ground for me at the moment.
+
 Building
 --------
 Clone the repository:
